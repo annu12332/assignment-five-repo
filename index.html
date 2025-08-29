@@ -37,7 +37,7 @@
                 <div
                     class="bg-[#bdf9ca] min-w-[123px] min-h-[52] flex flex-row items-center justify-center px-[36px] py-[14px] rounded-3xl">
                     <div>
-                        <h2>100</h2>
+                        <h2 id="totalcoin">100</h2>
                     </div>
                     <div><img class="max-h-[23px] max-w-[21px] mx-[10px] my-[3px]" src="assets/coin.png" alt=""></div>
                 </div>
@@ -99,7 +99,7 @@
                             </div>
 
                             <div class="bg-[#00A63E] w-[182px] h-[40px] rounded-xl flex text-center items-center justify-center text-white  gap-2">
-                                <i class="fa-solid fa-phone"></i><button >Call</button>
+                                <button class="callbutton" ><i class="fa-solid fa-phone"></i>Call</button>
 
                             </div>
                             
@@ -141,7 +141,7 @@
                             </div>
 
                             <div class="bg-[#00A63E] w-[182px] h-[40px] rounded-xl flex text-center items-center justify-center text-white gap-2">
-                                <i class="fa-solid fa-phone"></i><button >Call</button>
+                                <button class="callbutton" ><i class="fa-solid fa-phone"></i>Call</button>
 
                             </div>
                             
@@ -183,7 +183,7 @@
                             </div>
 
                             <div class="bg-[#00A63E] w-[182px] h-[40px] rounded-xl flex text-center items-center justify-center text-white gap-2">
-                                <i class="fa-solid fa-phone"></i><button >Call</button>
+                                <button class="callbutton" ><i class="fa-solid fa-phone"></i>Call</button>
 
                             </div>
                             
@@ -222,7 +222,7 @@
                             </div>
 
                             <div class="bg-[#00A63E] w-[182px] h-[40px] rounded-xl flex text-center items-center justify-center text-white gap-2">
-                                <i class="fa-solid fa-phone"></i><button >Call</button>
+                                <button class="callbutton" ><i class="fa-solid fa-phone"></i>Call</button>
 
                             </div>
                             
@@ -260,7 +260,7 @@
                             </div>
 
                             <div class="bg-[#00A63E] w-[182px] h-[40px] rounded-xl flex text-center items-center justify-center text-white gap-2">
-                                <i class="fa-solid fa-phone"></i><button >Call</button>
+                                <button class="callbutton" ><i class="fa-solid fa-phone"></i>Call</button>
 
                             </div>
                             
@@ -298,7 +298,7 @@
                             </div>
 
                             <div class="bg-[#00A63E] w-[182px] h-[40px] rounded-xl flex text-center items-center justify-center text-white gap-2">
-                                <i class="fa-solid fa-phone"></i><button >Call</button>
+                                <button class="callbutton" ><i class="fa-solid fa-phone"></i>Call</button>
 
                             </div>
                             
@@ -337,7 +337,7 @@
                             </div>
 
                             <div class="bg-[#00A63E] w-[182px] h-[40px] rounded-xl flex text-center items-center justify-center text-white gap-2">
-                                <i class="fa-solid fa-phone"></i><button >Call</button>
+                                <button class="callbutton" ><i class="fa-solid fa-phone"></i>Call</button>
 
                             </div>
                             
@@ -376,7 +376,7 @@
                             </div>
 
                             <div class="bg-[#00A63E] w-[182px] h-[40px] rounded-xl flex text-center items-center justify-center text-white gap-2">
-                                <i class="fa-solid fa-phone"></i><button >Call</button>
+                                <button class="callbutton" ><i class="fa-solid fa-phone"></i>Call</button>
 
                             </div>
                             
@@ -415,7 +415,7 @@
                             </div>
 
                             <div class="bg-[#00A63E] w-[182px] h-[40px] rounded-xl flex text-center items-center justify-center text-white gap-2">
-                                <i class="fa-solid fa-phone"></i><button >Call</button>
+                                <button class="callbutton" ><i class="fa-solid fa-phone"></i>Call</button>
 
                             </div>
                             
@@ -441,11 +441,15 @@
         <i class="fa-regular fa-clock"></i>
         <span class="font-bold ">Call History</span>
       </div>
-      <button class="self-start bg-[#00A63E] text-white px-[36px] py-[14px] rounded-full">
+      <button id="clearbutton" class="self-start bg-[#00A63E] text-white px-[36px] py-[14px] rounded-full">
         Clear
       </button>
     </div>
     <!-- Call history items এখানে -->
+     <div id="callhistory">
+        
+
+     </div>
   </div>
 </div>
 
