@@ -85,45 +85,51 @@ const hearts = document.querySelectorAll('.heart');
 
 //---for call button---//
 
-const callButtons = document.querySelectorAll('button');
+const callButtons = document.querySelectorAll('.callbutton');
+    const coinElement = document.querySelector('#totalcoin');
+    let coinCount = parseInt(coinElement.innerText) || 100;
 
-const coinElement = document.querySelectorAll('h2')[1]; // দ্বিতীয় h2 যেটা Coin
-let coinCount = parseInt(coinElement.innerText) || 100;
+    const callHistory = document.getElementById('callhistory');
 
-const callHistory = document.getElementById('callhistory');
+    function addCallToHistory(serviceName, serviceNumber) {
+      const now = new Date();
+      const timeString = now.toLocaleTimeString();
 
-callButtons.forEach(btn => {
-  if (btn.innerText.trim().toLowerCase() === 'call') {
-    btn.addEventListener('click', () => {
-      const card = btn.closest('.card-body');
-      const serviceName = card.querySelector('h2').innerText.trim();
-      const serviceNumber = card.querySelector('h1').innerText.trim();
-
-      if (coinCount < 20) {
-        alert('❌ কল করার জন্য পর্যাপ্ত কয়েন নেই! অন্তত ২০ কয়েন দরকার।');
-        return;
-      }
-
-      // কয়েন কাটা
-      coinCount -= 20;
-      totalcoin.innerText = coinCount;
-
-      // Alert
-      alert(`📞 ${serviceName} সেবাতে কল করা হচ্ছে\nনাম্বার: ${serviceNumber}`);
-
-      // Call History যোগ করো
       const historyItem = document.createElement('div');
       historyItem.className = 'p-2 mt-2 bg-[#F0FDF4] rounded text-sm border border-green-300';
 
+
       historyItem.innerHTML = `
         <strong>${serviceName}</strong><br>
-        নম্বর: ${serviceNumber}
+        নম্বর: ${serviceNumber}<br>
+        সময়: ${timeString}
       `;
 
       callHistory.appendChild(historyItem);
+    }
+
+    callButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = btn.closest('.card-body');
+        const serviceName = card.querySelector('h2').innerText.trim();
+        const serviceNumber = card.querySelector('h1').innerText.trim();
+
+        if (coinCount < 20) {
+          alert('❌ কল করার জন্য পর্যাপ্ত কয়েন নেই! অন্তত ২০ কয়েন দরকার।');
+          return;
+        }
+
+        coinCount -= 20;
+        coinElement.innerText = coinCount;
+
+        alert(`📞 ${serviceName} সেবাতে কল করা হচ্ছে\nনাম্বার: ${serviceNumber}`);
+
+        addCallToHistory(serviceName, serviceNumber);
+      });
+      
     });
-  }
-});
+
+
 
 
 const clearButton = document.getElementById("clearbutton");
