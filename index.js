@@ -28,10 +28,10 @@ const hearts = document.querySelectorAll('.heart');
 
 
 
-       // ফোন নাম্বার খুঁজে বের করো (উপরের <h1> ট্যাগে আছে)
+       // ফোন নাম্বার 
     const number = btn.closest('.card-body').querySelector('h1').innerText.trim();
 
-    // Alert তৈরি করো
+    // Alert 
     const alertBox = document.createElement('div');
     alertBox.innerHTML = `
       <div style="
@@ -65,7 +65,7 @@ const hearts = document.querySelectorAll('.heart');
 
     document.body.appendChild(alertBox);
 
-    // Copy Now বাটনে ক্লিক করলে নাম্বার কপি হবে
+    // Copy Now 
     const confirmBtn = alertBox.querySelector('#confirmCopyBtn');
     confirmBtn.addEventListener('click', () => {
       navigator.clipboard.writeText(number).then(() => {
@@ -75,10 +75,10 @@ const hearts = document.querySelectorAll('.heart');
       });
     });
 
-    // Optional: 5 সেকেন্ড পর alert গায়েব করে দিবে
+    // alert time set
     setTimeout(() => {
       alertBox.remove();
-    }, 5000);
+    }, 3000);
   });
 });
 
@@ -96,14 +96,22 @@ const callButtons = document.querySelectorAll('.callbutton');
       const timeString = now.toLocaleTimeString();
 
       const historyItem = document.createElement('div');
-      historyItem.className = 'p-2 mt-2 bg-[#F0FDF4] rounded text-sm border border-green-300';
+      historyItem.className = 'p-2 mt-2 bg-[#FAFAFA] rounded text-sm ';
 
 
-      historyItem.innerHTML = `
+      historyItem.innerHTML = `<div class="flex justify-between text-center items-center">
+        <div>
         <strong>${serviceName}</strong><br>
-        নম্বর: ${serviceNumber}<br>
-        সময়: ${timeString}
+        নম্বর: ${serviceNumber}
+        </div>
+        <div>
+         ${timeString}
+         </div>
+         </div>
+         
+
       `;
+      
 
       callHistory.appendChild(historyItem);
     }
@@ -137,3 +145,8 @@ clearButton.addEventListener('click', () => {
   callHistory.innerHTML = '';
    
 })
+
+
+
+
+
